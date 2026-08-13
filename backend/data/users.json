@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Smith",
+    "email": "alice@student.campus.edu"
+  },
+  {
+    "id": 2,
+    "name": "Bob Jones",
+    "email": "bob@student.campus.edu"
+  },
+  {
+    "id": 3,
+    "name": "Charlie Brown",
+    "email": "charlie@student.campus.edu"
+  },
+  {
+    "id": 4,
+    "name": "Diana Prince",
+    "email": "diana@student.campus.edu"
+  },
+  {
+    "id": 5,
+    "name": "Evan Wright",
+    "email": "evan@student.campus.edu"
+  }
+]

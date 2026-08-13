@@ -1,0 +1,79 @@
+[
+  {
+    "id": 2,
+    "title": "WebDev Bootcamp",
+    "description": "Learn React and Node.js from scratch",
+    "category": "Workshop",
+    "date": "2026-10-05",
+    "time": "14:00",
+    "venue": "Auditorium A",
+    "capacity": 200,
+    "registered": 199
+  },
+  {
+    "id": 3,
+    "title": "AI in Healthcare Seminar",
+    "description": "Guest lecture by industry experts",
+    "category": "Seminar",
+    "date": "2026-11-20",
+    "time": "11:00",
+    "venue": "Conference Hall",
+    "capacity": 100,
+    "registered": 100
+  },
+  {
+    "id": 4,
+    "title": "Hack the Campus",
+    "description": "24-hour campus hackathon",
+    "category": "Technical",
+    "date": "2026-12-01",
+    "time": "09:00",
+    "venue": "Main Library Hub",
+    "capacity": 150,
+    "registered": 45
+  },
+  {
+    "id": 5,
+    "title": "Creative Writing Workshop",
+    "description": "Express yourself through words",
+    "category": "Arts",
+    "date": "2026-08-25",
+    "time": "16:00",
+    "venue": "Room 204",
+    "capacity": 30,
+    "registered": 12
+  },
+  {
+    "id": 6,
+    "title": "Robotics Showcase",
+    "description": "Annual robotics club exhibition",
+    "category": "Exhibition",
+    "date": "2026-09-30",
+    "time": "10:00",
+    "venue": "Sports Arena",
+    "capacity": 500,
+    "registered": 230
+  },
+  {
+    "id": 7,
+    "title": "Past Event: Welcome Mixer",
+    "description": "Freshman orientation mixer",
+    "category": "Social",
+    "date": "2026-08-01",
+    "time": "18:00",
+    "venue": "Student Union",
+    "capacity": 300,
+    "registered": 280
+  },
+  {
+    "id": 8,
+    "title": "Cybersecurity Basics",
+    "description": "Intro to ethical hacking",
+    "category": "Workshop",
+    "date": "2026-10-15",
+    "time": "13:00",
+    "venue": "Lab 1",
+    "capacity": 40,
+    "registered": 38
+  }
+]

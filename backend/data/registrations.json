@@ -1,0 +1,20 @@
+[
+  {
+    "id": 101,
+    "eventId": 1,
+    "userId": 3,
+    "registeredAt": "2026-08-12T10:30:00Z"
+  },
+  {
+    "id": 102,
+    "eventId": 2,
+    "userId": 1,
+    "registeredAt": "2026-08-10T14:20:00Z"
+  },
+  {
+    "id": 1786610326460,
+    "eventId": 1,
+    "userId": 982,
+    "registeredAt": "2026-08-13T08:38:46.460Z"
+  }
+]
