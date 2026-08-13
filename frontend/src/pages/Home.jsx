@@ -23,8 +23,6 @@ function Home() {
     loadEvents();
   }, []);
 
-  // INTENTIONAL BUG 10: SEARCH/FILTER EDGE CASE
-  // The search is case-sensitive. Searching "coding" won't find "Coding Workshop"
   const filteredEvents = events.filter(event => {
     const matchesSearch = event.title.includes(searchTerm);
     const matchesCategory = categoryFilter === 'All' || event.category === categoryFilter;
@@ -44,7 +42,7 @@ function Home() {
         <input 
           type="text" 
           className="search-input"
-          placeholder="Search events (case-sensitive)..." 
+          placeholder="Search events..." 
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

@@ -16,9 +16,6 @@ exports.getEventRegistrations = (req, res) => {
     const eventId = parseInt(req.params.id);
     const registrations = readData('registrations.json').filter(r => r.eventId === eventId);
     
-    // INTENTIONAL BUG 3: FRONTEND/BACKEND RESPONSE MISMATCH
-    // Returning { data: registrations } instead of just registrations array
-    // This will break the Admin dashboard that expects an array directly
     res.json({ data: registrations });
 };
 
@@ -39,9 +36,6 @@ exports.deleteEvent = async (req, res) => {
     let events = readData('events.json');
     
     events = events.filter(e => e.id !== eventId);
-    
-    // INTENTIONAL BUG 8: JSON DATA CONSISTENCY ISSUE
-    // We are deleting the event but NOT deleting associated registrations from registrations.json
     
     await writeData('events.json', events, res);
     res.json({ success: true });

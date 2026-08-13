@@ -26,11 +26,6 @@ function AdminDashboard() {
     setRegError('');
     try {
       const data = await fetchEventRegistrations(eventId);
-      
-      // INTENTIONAL BUG 3: FRONTEND/BACKEND RESPONSE MISMATCH
-      // Backend returns { data: [...] } but frontend expects an array directly.
-      // We are trying to use .length and .map() on data which is an object.
-      // This will throw a TypeError or render nothing, forcing the student to debug.
       setRegistrations(data);
       
     } catch (err) {
@@ -110,8 +105,6 @@ function AdminDashboard() {
               </tr>
             </thead>
             <tbody>
-              {/* INTENTIONAL BUG 3 EXPOSED HERE: registrations is { data: [...] }, not an array */}
-              {/* This map will throw an error and crash the component if registrations isn't an array */}
               {registrations.length > 0 ? registrations.map(reg => (
                 <tr key={reg.id}>
                   <td>{reg.id}</td>

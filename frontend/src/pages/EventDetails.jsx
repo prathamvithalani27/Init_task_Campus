@@ -44,13 +44,6 @@ function EventDetails() {
         setError(response.error);
       } else {
         setSuccess('Successfully registered for the event!');
-        
-        // INTENTIONAL BUG 6: STALE FRONTEND STATE
-        // The event capacity is not updated in the local state.
-        // User has to refresh the page to see the new seat count.
-        
-        // The user ID should conceptually change or prevent duplicate registration,
-        // but because of BUG 1 on backend, we could technically submit again.
       }
     } catch (err) {
       setError('An error occurred during registration.');
@@ -118,10 +111,10 @@ function EventDetails() {
           <button 
             type="submit" 
             className="btn btn-primary" 
-            disabled={isSubmitting || (isFull && !success)} // If success is true, wait, we shouldn't allow if full. But if full because of stale state, the backend handles it.
+            disabled={isSubmitting}
             style={{width: '100%', marginTop: '1rem'}}
           >
-            {isSubmitting ? 'Processing...' : (isFull ? 'Event Full' : 'Register Now')}
+            {isSubmitting ? 'Processing...' : 'Register Now'}
           </button>
         </form>
       </div>

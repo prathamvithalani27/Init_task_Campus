@@ -2,8 +2,6 @@ const { readData, writeData } = require('../utils/fileStorage');
 
 exports.registerForEvent = async (req, res) => {
     const eventId = parseInt(req.params.id);
-    // INTENTIONAL BUG 5: VALIDATION WEAKNESS
-    // No backend validation for required fields in req.body (e.g., userId, name, email)
     const { userId } = req.body; 
     
     const events = readData('events.json');
@@ -15,11 +13,7 @@ exports.registerForEvent = async (req, res) => {
 
     const event = events[eventIndex];
 
-    // INTENTIONAL BUG 2: EVENT CAPACITY BUG (Race Condition)
-    // We check capacity, then simulate a slight delay, then write.
     if (event.registered >= event.capacity) {
-        // INTENTIONAL BUG 4: INCORRECT HTTP STATUS CODE
-        // Returning 200 instead of 400 or 409 for a full event error
         return res.status(200).json({ error: "Event is full" });
     }
 
@@ -27,10 +21,6 @@ exports.registerForEvent = async (req, res) => {
     await new Promise(resolve => setTimeout(resolve, 500));
 
     const registrations = readData('registrations.json');
-    
-    // INTENTIONAL BUG 1: DUPLICATE REGISTRATION
-    // We do NOT check if the user is already registered for this event.
-    // The frontend disables the button, but direct API calls will succeed.
 
     const newRegistration = {
         id: Date.now(),
@@ -51,9 +41,13 @@ exports.registerForEvent = async (req, res) => {
 
 exports.cancelRegistration = async (req, res) => {
     const eventId = parseInt(req.params.id);
-    // INTENTIONAL BUG 7: AUTHORIZATION / IDOR-LIKE ISSUE
-    // We trust the userId from the URL to cancel a registration, without verifying if the caller is that user.
     const userId = parseInt(req.params.userId);
+    const requestingUserId = parseInt(req.headers['x-user-id']);
+
+    // Secure auth check: ensure requesting user matches the registration owner
+    if (!requestingUserId || requestingUserId !== userId) {
+        return res.status(403).json({ error: "Unauthorized to cancel this registration" });
+    }
 
     let registrations = readData('registrations.json');
     const regIndex = registrations.findIndex(r => r.eventId === eventId && r.userId === userId);

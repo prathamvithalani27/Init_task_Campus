@@ -24,15 +24,8 @@ exports.writeData = (filename, data, res) => {
             fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf8');
             resolve();
         } catch (err) {
-            // INTENTIONAL BUG 9: ERROR HANDLING ISSUE
-            // Returning the full stack trace and internal path directly to the client instead of a generic error message
             if (res) {
-                res.status(500).json({ 
-                    error: "Failed to write data", 
-                    message: err.message, 
-                    stack: err.stack,
-                    path: getDataPath(filename)
-                });
+                res.status(500).json({ error: "Internal server error" });
             }
             reject(err);
         }

@@ -1,5 +1,16 @@
 [
   {
+    "id": 1,
+    "title": "CodeSprint 2026",
+    "description": "Competitive programming contest",
+    "category": "Technical",
+    "date": "2026-09-15",
+    "time": "10:00",
+    "venue": "Lab 3",
+    "capacity": 50,
+    "registered": 17
+  },
+  {
     "id": 2,
     "title": "WebDev Bootcamp",
     "description": "Learn React and Node.js from scratch",

@@ -12,9 +12,21 @@
     "registeredAt": "2026-08-10T14:20:00Z"
   },
   {
-    "id": 1786610326460,
-    "eventId": 1,
-    "userId": 982,
-    "registeredAt": "2026-08-13T08:38:46.460Z"
+    "id": 103,
+    "eventId": 3,
+    "userId": 2,
+    "registeredAt": "2026-08-11T09:15:00Z"
+  },
+  {
+    "id": 104,
+    "eventId": 5,
+    "userId": 4,
+    "registeredAt": "2026-08-12T16:45:00Z"
+  },
+  {
+    "id": 105,
+    "eventId": 8,
+    "userId": 5,
+    "registeredAt": "2026-08-13T11:00:00Z"
   }
 ]
