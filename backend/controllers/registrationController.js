@@ -17,8 +17,6 @@ exports.registerForEvent = async (req, res) => {
         return res.status(200).json({ error: "Event is full" });
     }
 
-    // Simulate async operation (e.g. fetching user data or slow I/O)
-    await new Promise(resolve => setTimeout(resolve, 500));
 
     const registrations = readData('registrations.json');
 
