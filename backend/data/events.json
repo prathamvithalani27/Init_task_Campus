@@ -1,38 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "CodeSprint 2026",
-    "description": "Competitive programming contest",
-    "category": "Technical",
-    "date": "2026-09-15",
-    "time": "10:00",
-    "venue": "Lab 3",
-    "capacity": 50,
-    "registered": 17
-  },
-  {
-    "id": 2,
-    "title": "WebDev Bootcamp",
-    "description": "Learn React and Node.js from scratch",
-    "category": "Workshop",
-    "date": "2026-10-05",
-    "time": "14:00",
-    "venue": "Auditorium A",
-    "capacity": 200,
-    "registered": 199
-  },
-  {
-    "id": 3,
-    "title": "AI in Healthcare Seminar",
-    "description": "Guest lecture by industry experts",
-    "category": "Seminar",
-    "date": "2026-11-20",
-    "time": "11:00",
-    "venue": "Conference Hall",
-    "capacity": 100,
-    "registered": 100
-  },
-  {
     "id": 4,
     "title": "Hack the Campus",
     "description": "24-hour campus hackathon",
@@ -41,7 +8,7 @@
     "time": "09:00",
     "venue": "Main Library Hub",
     "capacity": 150,
-    "registered": 45
+    "registered": 47
   },
   {
     "id": 5,
@@ -52,7 +19,7 @@
     "time": "16:00",
     "venue": "Room 204",
     "capacity": 30,
-    "registered": 12
+    "registered": 13
   },
   {
     "id": 6,
@@ -85,6 +52,6 @@
     "time": "13:00",
     "venue": "Lab 1",
     "capacity": 40,
-    "registered": 38
+    "registered": 40
   }
 ]

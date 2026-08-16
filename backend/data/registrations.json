@@ -28,5 +28,41 @@
     "eventId": 8,
     "userId": 5,
     "registeredAt": "2026-08-13T11:00:00Z"
+  },
+  {
+    "id": 1786713524029,
+    "eventId": 1,
+    "userId": 971,
+    "registeredAt": "2026-08-14T13:18:44.030Z"
+  },
+  {
+    "id": 1786713576390,
+    "eventId": 4,
+    "userId": 554,
+    "registeredAt": "2026-08-14T13:19:36.390Z"
+  },
+  {
+    "id": 1786713576925,
+    "eventId": 4,
+    "userId": 554,
+    "registeredAt": "2026-08-14T13:19:36.925Z"
+  },
+  {
+    "id": 1786713595084,
+    "eventId": 8,
+    "userId": 455,
+    "registeredAt": "2026-08-14T13:19:55.084Z"
+  },
+  {
+    "id": 1786713609476,
+    "eventId": 8,
+    "userId": 578,
+    "registeredAt": "2026-08-14T13:20:09.476Z"
+  },
+  {
+    "id": 1786716815288,
+    "eventId": 5,
+    "userId": 384,
+    "registeredAt": "2026-08-14T14:13:35.288Z"
   }
 ]

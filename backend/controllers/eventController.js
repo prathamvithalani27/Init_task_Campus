@@ -15,8 +15,8 @@ exports.getEventById = (req, res) => {
 exports.getEventRegistrations = (req, res) => {
     const eventId = parseInt(req.params.id);
     const registrations = readData('registrations.json').filter(r => r.eventId === eventId);
-    
-    res.json({ data: registrations });
+
+    res.json(registrations);
 };
 
 exports.createEvent = async (req, res) => {
@@ -34,9 +34,9 @@ exports.createEvent = async (req, res) => {
 exports.deleteEvent = async (req, res) => {
     const eventId = parseInt(req.params.id);
     let events = readData('events.json');
-    
+
     events = events.filter(e => e.id !== eventId);
-    
+
     await writeData('events.json', events, res);
     res.json({ success: true });
 };

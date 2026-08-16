@@ -25,15 +25,22 @@ export const registerForEvent = async (id, userData) => {
 };
 
 export const fetchEventRegistrations = async (id) => {
-    const res = await fetch(`${API_URL}/events/${id}/registrations`);
+    const token = localStorage.getItem('adminToken');
+    const res = await fetch(`${API_URL}/events/${id}/registrations`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
     return res.json();
 };
 
 export const createEvent = async (eventData) => {
+    const token = localStorage.getItem('adminToken');
     const res = await fetch(`${API_URL}/events`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(eventData)
     });
@@ -41,8 +48,12 @@ export const createEvent = async (eventData) => {
 };
 
 export const deleteEvent = async (id) => {
+    const token = localStorage.getItem('adminToken');
     const res = await fetch(`${API_URL}/events/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
     });
     return res.json();
 };
