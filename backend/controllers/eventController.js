@@ -36,7 +36,11 @@ exports.deleteEvent = async (req, res) => {
     let events = readData('events.json');
 
     events = events.filter(e => e.id !== eventId);
-
     await writeData('events.json', events, res);
+
+    let registrations = readData('registrations.json');
+    registrations = registrations.filter(r => r.eventId !== eventId);
+    await writeData('registrations.json', registrations, res);
+
     res.json({ success: true });
 };
