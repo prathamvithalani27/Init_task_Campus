@@ -14,7 +14,7 @@ exports.registerForEvent = async (req, res) => {
     const event = events[eventIndex];
 
     if (event.registered >= event.capacity) {
-        return res.status(200).json({ error: "Event is full" });
+        return res.status(400).json({ error: "Event is full" });
     }
 
 
