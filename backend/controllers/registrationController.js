@@ -20,10 +20,16 @@ exports.registerForEvent = async (req, res) => {
 
     const registrations = readData('registrations.json');
 
+    const finalUserId = parseInt(userId) || Math.floor(Math.random() * 1000) + 10;
+
+    if (registrations.some(r => r.eventId === eventId && r.userId === finalUserId)) {
+        return res.status(400).json({ error: "You are already registered for this event." });
+    }
+
     const newRegistration = {
         id: Date.now(),
         eventId: eventId,
-        userId: parseInt(userId) || Math.floor(Math.random() * 1000) + 10,
+        userId: finalUserId,
         name: name || 'Unknown',
         email: email || 'No email provided',
         registeredAt: new Date().toISOString()
