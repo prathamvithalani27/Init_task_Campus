@@ -2,7 +2,7 @@ const { readData, writeData } = require('../utils/fileStorage');
 
 exports.registerForEvent = async (req, res) => {
     const eventId = parseInt(req.params.id);
-    const { userId } = req.body; 
+    const { userId, name, email } = req.body; 
     
     const events = readData('events.json');
     const eventIndex = events.findIndex(e => e.id === eventId);
@@ -26,6 +26,8 @@ exports.registerForEvent = async (req, res) => {
         id: Date.now(),
         eventId: eventId,
         userId: parseInt(userId) || Math.floor(Math.random() * 1000) + 10,
+        name: name || 'Unknown',
+        email: email || 'No email provided',
         registeredAt: new Date().toISOString()
     };
 

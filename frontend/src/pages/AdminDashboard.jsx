@@ -51,7 +51,18 @@ function AdminDashboard() {
 
   return (
     <div>
-      <h1 className="page-title">Admin Dashboard</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <h1 className="page-title" style={{ margin: 0 }}>Admin Dashboard</h1>
+        <button 
+          className="btn btn-danger" 
+          onClick={() => {
+            localStorage.removeItem('adminToken');
+            window.location.href = '/admin/login';
+          }}
+        >
+          Logout
+        </button>
+      </div>
       {error && <div className="alert alert-error">{error}</div>}
       
       <div className="event-details-container" style={{maxWidth: '100%', marginBottom: '2rem'}}>
@@ -101,6 +112,8 @@ function AdminDashboard() {
               <tr>
                 <th>Registration ID</th>
                 <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
                 <th>Registration Time</th>
               </tr>
             </thead>
@@ -109,11 +122,13 @@ function AdminDashboard() {
                 <tr key={reg.id}>
                   <td>{reg.id}</td>
                   <td>{reg.userId}</td>
+                  <td>{reg.name || 'N/A'}</td>
+                  <td>{reg.email || 'N/A'}</td>
                   <td>{new Date(reg.registeredAt).toLocaleString()}</td>
                 </tr>
               )) : (
                 <tr>
-                  <td colSpan="3">No registrations found or data format error.</td>
+                  <td colSpan="5">No registrations found or data format error.</td>
                 </tr>
               )}
             </tbody>
