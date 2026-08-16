@@ -44,6 +44,7 @@ function EventDetails() {
         setError(response.error);
       } else {
         setSuccess('Successfully registered for the event!');
+        setEvent(prev => ({ ...prev, registered: prev.registered + 1 }));
       }
     } catch (err) {
       setError('An error occurred during registration.');
