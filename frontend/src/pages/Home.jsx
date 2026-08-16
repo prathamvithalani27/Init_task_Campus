@@ -24,7 +24,7 @@ function Home() {
   }, []);
 
   const filteredEvents = events.filter(event => {
-    const matchesSearch = event.title.includes(searchTerm);
+    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = categoryFilter === 'All' || event.category === categoryFilter;
     return matchesSearch && matchesCategory;
   });
