@@ -3,6 +3,10 @@ const { readData, writeData } = require('../utils/fileStorage');
 exports.registerForEvent = async (req, res) => {
     const eventId = parseInt(req.params.id);
     const { userId, name, email } = req.body; 
+
+    if (!name || !name.trim() || !email || !email.trim()) {
+        return res.status(400).json({ error: "Name and email are required fields." });
+    }
     
     const events = readData('events.json');
     const eventIndex = events.findIndex(e => e.id === eventId);
@@ -30,8 +34,8 @@ exports.registerForEvent = async (req, res) => {
         id: Date.now(),
         eventId: eventId,
         userId: finalUserId,
-        name: name || 'Unknown',
-        email: email || 'No email provided',
+        name: name.trim(),
+        email: email.trim(),
         registeredAt: new Date().toISOString()
     };
 
